@@ -90,7 +90,7 @@ print()
 
 -- Asks user how many bugs they are selling.
 print("How many bugs are you selling?")
-local num1 = io.read()
+local num1 = tonumber(io.read()) -- tonumber() makes the number not a string.
 print()
 
 -- Asks user what bug they are selling.
@@ -99,7 +99,7 @@ local bug = prices[io.read()]
 print()
 
 -- Prints out the amount of bells you will recieve!
-print("You will get", num1*bug, "for selling to the nooklings!")
+print("You will get " .. num1*bug .. " bells for selling to the nooklings!") -- Use .. instead of , so it is joined by spaces, not tabs!!!
 print()
 
 print("Press ENTER to quit")

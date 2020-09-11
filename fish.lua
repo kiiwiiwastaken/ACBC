@@ -90,7 +90,7 @@ print()
 
 -- Asks how many fish you are selling and stores it as variable `num1`
 print("How many fish are you selling?")
-local num1 = io.read()
+local num1 = tonumber(io.read()) -- tonumber() makes the number not a string.
 print()
 
 -- Asks what fish you are selling and stores it as `fish`
@@ -99,7 +99,7 @@ local fish = price[io.read()]
 print()
 
 -- Multiplies the number of fish being sold and the fish from the table above!
-print("You will get", num1*fish, "for selling to the nooklings!")
+print("You will get " .. num1*fish .. " for selling to the nooklings!") -- Use .. instead of , so it is joined by spaces, not tabs!!!
 print()
 
 print("Press ENTER to exit.")
