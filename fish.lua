@@ -82,16 +82,31 @@ local price ={
     ['Zebra Turkeyfish'] = 500
 }
 
+--[[
+    This is for adding CJ.
+
+local enable ={
+    ['Yes'] = Yes,
+    ['No'] = No
+}
+]]
+
 -- Just a welcome message that always shows when you start the application.
-print("Animal Crossing Bell Calculator v0.1")
-print("Hello and thank you for using the Animal Crossing Bell Calculator! Please view the README to see what all you can do with this application :)")
-print()
-print()
+print("Animal Crossing Bell Calculator v0.2")
+print("Hello and thank you for using the Animal Crossing Bell Calculator! Please view \nthe README to see what all you can do with this application. If you'd like to \nsee what has been added since v0.1 please view the file named CHANGELOG.\n\n")
 
 -- Asks how many fish you are selling and stores it as variable `num1`
 print("How many fish are you selling?")
 local num1 = tonumber(io.read()) -- tonumber() makes the number not a string.
 print()
+
+--[[
+    TODO: Implement CJ modifier correctly!!!
+
+print("Are you selling to CJ? [Yes/No]")
+local cj = enable[io.read()]
+print()
+]]
 
 -- Asks what fish you are selling and stores it as `fish`
 print("What kind of fish are you selling?")
@@ -99,9 +114,7 @@ local fish = price[io.read()]
 print()
 
 -- Multiplies the number of fish being sold and the fish from the table above!
-print("You will get " .. num1*fish .. " for selling to the nooklings!") -- Use .. instead of , so it is joined by spaces, not tabs!!!
-print()
+print("You will get " .. num1*fish .. " for selling to the nooklings!\n") -- Use .. instead of , so it is joined by spaces, not tabs!!!
+print("You will get " .. num1*2*fish .. " for selling to CJ!\n")
 
-print("Press ENTER to exit.")
-io.read()
 os.exit()

@@ -82,26 +82,42 @@ local prices ={
     ['Yellow Butterfly'] = 160
 }
 
+--[[
+    This is for adding Flick.
+
+local enable ={
+    ['Yes'] = Yes,
+    ['No'] = No
+}
+]]
+
 -- Welcome message that is displayed everytime you run the application.
-print("Animal Crossing Bell Calculator v0.1")
-print("Hello and thank you for using the Animal Crossing Bell Calculator! Please view the README to see what all you can do with this application :)")
-print()
-print()
+print("Animal Crossing Bell Calculator v0.2")
+print("Hello and thank you for using the Animal Crossing Bell Calculator! Please view \nthe README to see what all you can do with this application. If you'd like to \nsee what has been added since v0.1 please view the file named CHANGELOG.\n\n")
 
 -- Asks user how many bugs they are selling.
 print("How many bugs are you selling?")
 local num1 = tonumber(io.read()) -- tonumber() makes the number not a string.
 print()
 
+--[[
+    TODO: Implement this code to add Flick modifier!!!
+
+print("Are you selling to Flick? [Yes/No]")
+local flick = enable[io.read()]
+print()
+]]
+
 -- Asks user what bug they are selling.
 print("What bug are you selling?")
 local bug = prices[io.read()]
 print()
 
--- Prints out the amount of bells you will recieve!
-print("You will get " .. num1*bug .. " bells for selling to the nooklings!") -- Use .. instead of , so it is joined by spaces, not tabs!!!
-print()
+--[[
+    Prints out the amount of bells you will recieve!
+    TODO: Have if statement so it doesn't print out all of the output at once!!!!
+]]
+print("You will get " .. num1*bug .. " bells for selling to the nooklings!\n") -- Use .. instead of , so it is joined by spaces, not tabs!!!
+print("You will get " .. num1*2*bug .. " bells for selling to Flick!\n")
 
-print("Press ENTER to quit")
-io.read()
 os.exit()
