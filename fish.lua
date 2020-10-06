@@ -82,15 +82,6 @@ local price ={
     ['Zebra Turkeyfish'] = 500
 }
 
---[[
-    This is for adding CJ.
-
-local enable ={
-    ['Yes'] = Yes,
-    ['No'] = No
-}
-]]
-
 -- Just a welcome message that always shows when you start the application.
 print("Animal Crossing Bell Calculator v0.2")
 print("Hello and thank you for using the Animal Crossing Bell Calculator! Please view \nthe README to see what all you can do with this application. If you'd like to \nsee what has been added since v0.1 please view the file named CHANGELOG.\n\n")
@@ -100,21 +91,29 @@ print("How many fish are you selling?")
 local num1 = tonumber(io.read()) -- tonumber() makes the number not a string.
 print()
 
---[[
-    TODO: Implement CJ modifier correctly!!!
-
+-- Asks if you are selling to CJ
 print("Are you selling to CJ? [Yes/No]")
-local cj = enable[io.read()]
+local cj = io.read()
 print()
-]]
+
+-- Asks if you are selling to the Drop-Off box in front of the Nookling's store.
+print("Are you selling to Nookling's Drop-Off box? [Yes/No]")
+local nook = io.read()
+print()
 
 -- Asks what fish you are selling and stores it as `fish`
 print("What kind of fish are you selling?")
 local fish = price[io.read()]
 print()
 
--- Multiplies the number of fish being sold and the fish from the table above!
-print("You will get " .. num1*fish .. " for selling to the nooklings!\n") -- Use .. instead of , so it is joined by spaces, not tabs!!!
-print("You will get " .. num1*2*fish .. " for selling to CJ!\n")
-
+-- Outputs the amount of bells you will recieve!
+if cj:lower() == 'no' and nook:lower() == 'no' then
+	print("You will earn " .. num1*fish .. " bells for selling to the Nooklings!\n")
+elseif cj:lower() == 'yes' and nook:lower() == 'no' then
+	print("You will earn " .. num1*2*fish .. " bells for selling to CJ!\n")
+elseif cj:lower() == 'no' and nook:lower() == 'yes' then
+	print("You will earn " .. num1*0.8*fish .. " bells for selling to Nookling's Drop-Off box!\n")
+else
+	print("You can't sell to both CJ and the Drop-Off box lol")
+end
 os.exit()

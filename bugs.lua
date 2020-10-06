@@ -82,15 +82,6 @@ local prices ={
     ['Yellow Butterfly'] = 160
 }
 
---[[
-    This is for adding Flick.
-
-local enable ={
-    ['Yes'] = Yes,
-    ['No'] = No
-}
-]]
-
 -- Welcome message that is displayed everytime you run the application.
 print("Animal Crossing Bell Calculator v0.2")
 print("Hello and thank you for using the Animal Crossing Bell Calculator! Please view \nthe README to see what all you can do with this application. If you'd like to \nsee what has been added since v0.1 please view the file named CHANGELOG.\n\n")
@@ -100,24 +91,29 @@ print("How many bugs are you selling?")
 local num1 = tonumber(io.read()) -- tonumber() makes the number not a string.
 print()
 
---[[
-    TODO: Implement this code to add Flick modifier!!!
-
+-- Asks if you are selling to Flick
 print("Are you selling to Flick? [Yes/No]")
-local flick = enable[io.read()]
+local flick = io.read()
 print()
-]]
+
+-- Asks if you are selling to the Drop-Off box in from of the Nookling's store.
+print("Are you selling to Nookling's Drop-Off box? [Yes/No]")
+local nook = io.read()
+print()
 
 -- Asks user what bug they are selling.
 print("What bug are you selling?")
 local bug = prices[io.read()]
 print()
 
---[[
-    Prints out the amount of bells you will recieve!
-    TODO: Have if statement so it doesn't print out all of the output at once!!!!
-]]
-print("You will get " .. num1*bug .. " bells for selling to the nooklings!\n") -- Use .. instead of , so it is joined by spaces, not tabs!!!
-print("You will get " .. num1*2*bug .. " bells for selling to Flick!\n")
-
+-- Prints out the amount of bells you will recieve!
+if flick:lower() == "no" and nook:lower() == "no" then
+	print("You will earn " .. num1*bug .. " bells for selling to the Nooklings!\n")
+elseif flick:lower() == "yes" and nook:lower() == "no" then
+	print("You will earn " .. num1*2*bug .. " bells for selling to Flick!\n")
+elseif flick:lower() == "no" and nook:lower() == "yes" then
+	print("You will earn " .. num1*0.8*bug .. " bells for selling to Nookling's Drop-Off box!\n")
+else
+	print("You can't sell to both Flick and the Nookling\'s Drop-Off box lol\n")
+end
 os.exit()
