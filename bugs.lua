@@ -82,29 +82,21 @@ local prices ={
     ['Yellow Butterfly'] = 160
 }
 
--- Welcome message that is displayed everytime you run the application.
-print("Animal Crossing Bell Calculator v0.2")
-print("Hello and thank you for using the Animal Crossing Bell Calculator! Please view \nthe README to see what all you can do with this application. If you'd like to \nsee what has been added since v0.1 please view the file named CHANGELOG.\n\n")
-
 -- Asks user how many bugs they are selling.
-print("How many bugs are you selling?")
+print("\nHow many bugs are you selling?")
 local num1 = tonumber(io.read()) -- tonumber() makes the number not a string.
-print()
 
 -- Asks if you are selling to Flick
-print("Are you selling to Flick? [Yes/No]")
+print("\nAre you selling to Flick? [Yes/No]")
 local flick = io.read()
-print()
 
 -- Asks if you are selling to the Drop-Off box in from of the Nookling's store.
-print("Are you selling to Nookling's Drop-Off box? [Yes/No]")
+print("\nAre you selling to Nookling's Drop-Off box? [Yes/No]")
 local nook = io.read()
-print()
 
 -- Asks user what bug they are selling.
-print("What bug are you selling?")
+print("\nWhat bug are you selling?")
 local bug = prices[io.read()]
-print()
 
 -- Prints out the amount of bells you will recieve!
 if flick:lower() == "no" and nook:lower() == "no" then

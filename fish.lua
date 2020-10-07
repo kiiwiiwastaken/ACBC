@@ -1,4 +1,4 @@
--- This is a list of all fish in Animal Crossing: new Horizons. I can probably slim it down due to duplicate amounts, but I see no real benifet to it.
+-- This is a list of all fish in Animal Crossing: new Horizons. I can probably slim it down due to duplicate amounts, but I have no fucking clue on how to do it right now
 local price ={
     ['Anchovy'] = 200,
     ['Angelfish'] = 3000,
@@ -82,29 +82,21 @@ local price ={
     ['Zebra Turkeyfish'] = 500
 }
 
--- Just a welcome message that always shows when you start the application.
-print("Animal Crossing Bell Calculator v0.2")
-print("Hello and thank you for using the Animal Crossing Bell Calculator! Please view \nthe README to see what all you can do with this application. If you'd like to \nsee what has been added since v0.1 please view the file named CHANGELOG.\n\n")
-
 -- Asks how many fish you are selling and stores it as variable `num1`
-print("How many fish are you selling?")
+print("\nHow many fish are you selling?")
 local num1 = tonumber(io.read()) -- tonumber() makes the number not a string.
-print()
 
 -- Asks if you are selling to CJ
-print("Are you selling to CJ? [Yes/No]")
+print("\nAre you selling to CJ? [Yes/No]")
 local cj = io.read()
-print()
 
 -- Asks if you are selling to the Drop-Off box in front of the Nookling's store.
-print("Are you selling to Nookling's Drop-Off box? [Yes/No]")
+print("\nAre you selling to Nookling's Drop-Off box? [Yes/No]")
 local nook = io.read()
-print()
 
 -- Asks what fish you are selling and stores it as `fish`
-print("What kind of fish are you selling?")
+print("\nWhat kind of fish are you selling?")
 local fish = price[io.read()]
-print()
 
 -- Outputs the amount of bells you will recieve!
 if cj:lower() == 'no' and nook:lower() == 'no' then
